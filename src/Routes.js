@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Home from "./core/Home";
 import Signin from "./user/Signin";
 import Signup from "./user/Signup";
@@ -16,7 +16,7 @@ import UpdateDonationRequest from "./admin/UpdateDonationRequest";
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <PrivateRoute path="/" exact component={Home} />
         <Route path="/signup" exact component={Signup} />
@@ -57,7 +57,7 @@ const Routes = () => {
           component={UpdateDonationRequest}
         />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
