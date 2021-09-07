@@ -72,7 +72,7 @@ const Home = () => {
       >
         <div className="row">
           {donationBags.map((donation, index) => {
-            // console.log(donation);
+            console.log(donation);
             return (
               <div key={index} className="col-6 mb-2">
                 <Card donation={donation} text="Donation" />

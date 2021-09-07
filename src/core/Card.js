@@ -10,12 +10,12 @@ const Card = ({ donation, text, setReload = (f) => f, reload = undefined }) => {
   const [redirect, setRedirect] = useState(false);
   // const [count, setCount] = useState(donation.count);
 
-  const cardTitle = donation ? donation.name : "A photo from pexels";
-  const cardDescription = donation
-    ? donation.description
-    : "Default description";
-  const cardContactNumber = donation ? donation.contactNumber : "88888888";
-  const cardAddress = donation ? donation.address : "stree 404";
+  // const cardTitle = donation ? donation.name : "A photo from pexels";
+  // const cardDescription = donation
+  //   ? donation.description
+  //   : "Default description";
+  // const cardContactNumber = donation ? donation.contactNumber : "88888888";
+  // const cardAddress = donation ? donation.address : "stree 404";
   const { user, token } = isAuthenticated();
 
   const acceptDonationBags = () => {
@@ -68,17 +68,28 @@ const Card = ({ donation, text, setReload = (f) => f, reload = undefined }) => {
   return (
     <div className="card text-white bg-dark border border-secondary">
       <div className="card-header lead text-center bg-secondary">
-        {cardTitle}
+        {donation.name}
       </div>
       <div className="card-body">
         {getARedirect(redirect)}
-        <p className="lead font-weight-normal text-wrap">{cardDescription}</p>
         <p className="lead font-weight-normal text-wrap">
-          Contact:{cardContactNumber}
+          {donation.description}
+        </p>
+        <p className="lead font-weight-normal text-wrap d-flex justify-content-between">
+          <span>
+            <i class="fas fa-user color-info mr-2"></i>
+            {donation.user.name}
+          </span>
+          <span>
+            <i class="fas fa-phone-alt mr-2"></i>
+            {donation.contactNumber}
+          </span>
         </p>
         <p className="lead font-weight-normal text-wrap">
-          Address:{cardAddress}
+          <i class="fas fa-home mr-2"></i>
+          {donation.address}
         </p>
+        <p className="lead font-weight-normal text-wrap ">{`${donation.city},${donation.state}`}</p>
         <div className="row">
           <div className="col-12">{showAccept(text)}</div>
           {/* <div className="col-12">{showRemovefromCart(removefromCart)}</div> */}
