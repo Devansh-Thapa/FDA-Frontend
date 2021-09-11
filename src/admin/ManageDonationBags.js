@@ -7,6 +7,7 @@ import {
 } from "./helper/adminapicall";
 import { isAuthenticated } from "../auth/helper";
 import moment from "moment";
+import "../style/donationlist.css";
 
 const ManageDonationBags = () => {
   const [donationBags, setDonationBags] = useState([]);
@@ -16,7 +17,7 @@ const ManageDonationBags = () => {
   const { user, token } = isAuthenticated();
 
   const preLoad = () => {
-    getAllDonationBagsByUserId(user._id, token).then((data) => {
+    getAllDonationBagsByUserId(user._id, token, "Available").then((data) => {
       if (data.error) {
         console.log("ERROR!!:");
         console.log(data.error);
@@ -57,7 +58,7 @@ const ManageDonationBags = () => {
   };
 
   return (
-    <Base className="container bg-info pt-2 mt-5">
+    <Base className="container rounded pt-2 mt-5">
       <div className="list-inline d-flex justify-content-center">
         <Link
           className="btn btn-md btn-dark mb-3 mt-2 list-inline-item"
@@ -69,14 +70,14 @@ const ManageDonationBags = () => {
           Manage Donation Bags
         </h1>
       </div>
-      <div className="row bg-dark text-white">
+      <div className="row list rounded">
         <div className="col-12 mx-auto">
           <h5 className="text-center text-white mt-3 mb-3">
             Found {donationBags.length} donation bags
           </h5>
           <div class="row">
             <div class="col-12">
-              <table class="table table-stripped table-hover">
+              <table class="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col">No</th>

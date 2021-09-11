@@ -271,7 +271,7 @@ const UpdateDonationRequest = ({ match }) => {
 
   // console.log("HERE!!");
   return (
-    <Base className="container bg-info pt-2 mt-5">
+    <Base className="container rounded pt-2 mt-5">
       <div className="list-inline d-flex justify-content-center">
         <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3 mt-2">
           Dashboard
@@ -280,7 +280,7 @@ const UpdateDonationRequest = ({ match }) => {
           Update Donation Request
         </h1>
       </div>
-      <div className="row bg-secondary text-white rounded mb-4 pt-4">
+      <div className="row rounded mb-4 pt-4 form-body">
         <div className="col-md-8 offset-md-2">
           {successMessage()}
           {createDonationRequestForm()}

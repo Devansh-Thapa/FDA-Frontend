@@ -1,34 +1,43 @@
 import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth/helper";
-
+import "../style/navbar.css";
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: "#2ecc72" };
+    return "active";
   } else {
-    return { color: "#ffffff" };
+    return "";
   }
 };
 
 const Nav = ({ history }) => {
   return (
     <div>
-      <nav className="navbar sticky-top navbar-expand-sm bg-secondary">
+      {/* <nav className="navbar sticky-top navbar-expand-sm bg-secondary">
+       */}
+      <nav className="navbar sticky-top navbar-expand-sm">
         <ul className="navbar-nav">
           {isAuthenticated() && (
             <Fragment>
               <li className="nav-item">
-                <Link
-                  style={currentTab(history, "/")}
-                  className="nav-link"
-                  to="/"
-                >
+                <Link className={`nav-link ${currentTab(history, "/")}`} to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  style={currentTab(history, "/admin/dashboard")}
+                  className={`nav-link ${currentTab(
+                    history,
+                    "/donationHistory"
+                  )}`}
+                  to="/donationHistory"
+                >
+                  Donation history
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  // style={currentTab(history, "/admin/dashboard")}
                   className="nav-link"
                   to="/admin/dashboard"
                 >
@@ -41,7 +50,7 @@ const Nav = ({ history }) => {
             <Fragment>
               <li className="nav-item">
                 <Link
-                  style={currentTab(history, "/signup")}
+                  // style={currentTab(history, "/signup")}
                   className="nav-link"
                   to="/signup"
                 >
@@ -50,7 +59,7 @@ const Nav = ({ history }) => {
               </li>
               <li className="nav-item">
                 <Link
-                  style={currentTab(history, "/signin")}
+                  // style={currentTab(history, "/signin")}
                   className="nav-link"
                   to="/signin"
                 >
@@ -64,7 +73,7 @@ const Nav = ({ history }) => {
           {isAuthenticated() && (
             <li className="nav-item">
               <span
-                className="nav-link text-warning"
+                className="nav-link text-warning signout"
                 onClick={() => {
                   signout(() => {
                     history.push("/");

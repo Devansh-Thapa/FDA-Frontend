@@ -1,0 +1,24 @@
+.card-header {
+  background-color: #4b6587;
+}
+
+span:hover {
+  cursor: auto;
+  background: none;
+}
+
+.green-square {
+  border-style: solid;
+  border-color: #4f9e4f;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.red-square {
+  border-style: solid;
+  border-color: #d33c37;
+  display: block;
+  width: 40px;
+  height: 40px;
+}

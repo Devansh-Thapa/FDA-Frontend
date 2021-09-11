@@ -5,8 +5,9 @@ import {
   acceptDonationBag,
   acceptDonationRequest,
 } from "./helper/coreapicalls";
+import "../style/card.css";
 
-const Card = ({ donation, text, setReload = (f) => f, reload = undefined }) => {
+const Card = ({ donation, text, showButton = true }) => {
   const [redirect, setRedirect] = useState(false);
   // const [count, setCount] = useState(donation.count);
 
@@ -42,33 +43,31 @@ const Card = ({ donation, text, setReload = (f) => f, reload = undefined }) => {
         onClick={
           text === "Donation" ? acceptDonationBags : acceptDonationRequests
         }
-        className="btn btn-block btn-outline-success mt-2 mb-2"
+        className="btn btn-block btn-success mt-2 mb-2"
       >
         Accept {text}
       </button>
     );
   };
 
-  // const showRemovefromCart = () => {
-  //   return (
-  //     removefromCart && (
-  //       <button
-  //         onClick={() => {
-  //           removeItemFromCart(donation._id);
-  //           setReload(!reload);
-  //         }}
-  //         className="btn btn-block btn-outline-danger mt-2 mb-2"
-  //       >
-  //         Remove from cart
-  //       </button>
-  //     )
-  //   );
-  // };
-
   return (
-    <div className="card text-white bg-dark border border-secondary">
-      <div className="card-header lead text-center bg-secondary">
+    <div className="card">
+      <div className="card-header lead text-center text-white">
         {donation.name}
+        <div
+          className={
+            donation.category === "Vegetarian" ? "green-square" : "red-square"
+          }
+          style={{ float: `right` }}
+        >
+          <i
+            className={`fas fa-circle ${
+              donation.category === "Vegetarian"
+                ? "text-success"
+                : "text-danger"
+            }`}
+          ></i>
+        </div>
       </div>
       <div className="card-body">
         {getARedirect(redirect)}
@@ -77,21 +76,31 @@ const Card = ({ donation, text, setReload = (f) => f, reload = undefined }) => {
         </p>
         <p className="lead font-weight-normal text-wrap d-flex justify-content-between">
           <span>
-            <i class="fas fa-user color-info mr-2"></i>
-            {donation.user.name}
+            <i className="fas fa-user mr-2"></i>
+            Donated By: {donation.user.name}
           </span>
           <span>
-            <i class="fas fa-phone-alt mr-2"></i>
+            <i className="fas fa-phone-alt mr-2"></i>
             {donation.contactNumber}
           </span>
         </p>
+        {donation.acceptedBy ? (
+          <p className="lead font-weight-normal text-wrap d-flex justify-content-between">
+            <span>
+              <i class="fas fa-user color-info mr-2"></i>
+              Accepted By: {donation.acceptedBy.name}
+            </span>
+          </p>
+        ) : (
+          ""
+        )}
         <p className="lead font-weight-normal text-wrap">
-          <i class="fas fa-home mr-2"></i>
+          <i className="fas fa-home mr-2"></i>
           {donation.address}
         </p>
         <p className="lead font-weight-normal text-wrap ">{`${donation.city},${donation.state}`}</p>
         <div className="row">
-          <div className="col-12">{showAccept(text)}</div>
+          <div className="col-12">{showButton ? showAccept(text) : ""}</div>
           {/* <div className="col-12">{showRemovefromCart(removefromCart)}</div> */}
         </div>
       </div>

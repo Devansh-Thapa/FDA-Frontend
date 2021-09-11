@@ -32,15 +32,15 @@ export const getAllDonationBags = () => {
 };
 
 //Get all donationBags by user Id
-export const getAllDonationBagsByUserId = (userId, token) => {
-  return fetch(`${API}/user/${userId}/donationBags`, {
+export const getAllDonationBagsByUserId = (userId, token, status) => {
+  return fetch(`${API}/user/${userId}/donationBags?status=${status}`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       return response.json();
     })
     .catch((err) => console.log(err));
@@ -140,16 +140,16 @@ export const deleteDonationRequest = (donationRequestId, userId, token) => {
     .catch((err) => console.log(err));
 };
 
-//Get all donationBags by user Id
-export const getAllDonationRequestsByUserId = (userId, token) => {
-  return fetch(`${API}/user/${userId}/donationRequests`, {
+//Get all donation requests by user Id
+export const getAllDonationRequestsByUserId = (userId, token, status) => {
+  return fetch(`${API}/user/${userId}/donationRequests?status=${status}`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
     .then((response) => {
-      console.log(response);
+      console.log("response", response);
       return response.json();
     })
     .catch((err) => console.log(err));

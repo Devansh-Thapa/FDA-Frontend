@@ -1,6 +1,7 @@
 import React from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import Home from "./core/Home";
+import DonationHistory from "./core/DonationHistory";
 import Signin from "./user/Signin";
 import Signup from "./user/Signup";
 import AdminRoute from "./auth/helper/AdminRoutes";
@@ -19,6 +20,11 @@ const Routes = () => {
     <HashRouter>
       <Switch>
         <PrivateRoute path="/" exact component={Home} />
+        <PrivateRoute
+          path="/donationHistory"
+          exact
+          component={DonationHistory}
+        />
         <Route path="/signup" exact component={Signup} />
         <Route path="/signin" exact component={Signin} />
         {/* <Route path="/cart" exact component={Cart} /> */}

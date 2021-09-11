@@ -41,11 +41,16 @@ const Signup = () => {
 
   const signUpForm = () => {
     return (
-      <div className="row">
+      <div className="row mt-5 container mx-auto">
         <div className="col-md-6 offset-sm-3 text-left">
+          <div className="">
+            <h2>Signup</h2>
+          </div>
           <form action="#">
             <div className="form-group">
-              <label className="text-light">Name</label>
+              <label>
+                <h6>Name</h6>
+              </label>
               <input
                 className="form-control"
                 onChange={handleChange("name")}
@@ -54,7 +59,9 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-              <label className="text-light">Email</label>
+              <label>
+                <h6>Email</h6>
+              </label>
               <input
                 className="form-control"
                 onChange={handleChange("email")}
@@ -63,7 +70,9 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-              <label className="text-light">Password</label>
+              <label>
+                <h6>Password</h6>
+              </label>
               <input
                 className="form-control"
                 onChange={handleChange("password")}

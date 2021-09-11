@@ -75,11 +75,16 @@ const Signin = () => {
 
   const signInForm = () => {
     return (
-      <div className="row">
+      <div className="row container mt-5 mx-auto">
         <div className="col-md-6 offset-sm-3 text-left">
+          <div className="">
+            <h2>Signin</h2>
+          </div>
           <form action="#">
             <div className="form-group">
-              <label className="text-light">Email</label>
+              <label>
+                <h6>Email</h6>
+              </label>
               <input
                 value={email}
                 onChange={handleChange("email")}
@@ -88,7 +93,9 @@ const Signin = () => {
               />
             </div>
             <div className="form-group">
-              <label className="text-light">Password</label>
+              <label>
+                <h6>Password</h6>
+              </label>
               <input
                 value={password}
                 onChange={handleChange("password")}
@@ -106,8 +113,7 @@ const Signin = () => {
   };
 
   return (
-    <Base title="Sign in page" description="A page to sign in!!">
-      <h1>Signin</h1>
+    <Base>
       {loadingMessage()}
       {errorMessage()}
       {signInForm()}

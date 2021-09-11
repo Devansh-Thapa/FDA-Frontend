@@ -1,0 +1,19 @@
+.dashbody {
+  background-color: #bebebe;
+}
+
+.navigation > ul > li > .nav-link {
+  color: black;
+  text-decoration: none;
+}
+
+.navigation > ul > li > .nav-link:hover {
+  color: white;
+}
+.navigation > ul > li > {
+  color: white;
+}
+
+.navigation > ul > li:hover {
+  background-color: #415979;
+}

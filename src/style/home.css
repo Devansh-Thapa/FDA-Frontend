@@ -1,0 +1,46 @@
+body {
+  background: #e9e7e1;
+  padding-bottom: 20px;
+}
+
+.bg-active {
+  background-color: #bebebe;
+}
+
+.bg-inactive {
+  background-color: #d8d6d6;
+}
+
+.filter-form {
+  background-color: #d8d6d6;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  width: 40px;
+}
+
+.filter-btn:focus {
+  outline: none;
+}
+
+.filter-btn:hover {
+  cursor: pointer;
+}
+
+#content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* footer {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+} */

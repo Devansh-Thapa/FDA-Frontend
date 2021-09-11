@@ -4,14 +4,17 @@ import Nav from "./nav";
 const Base = ({
   title = "",
   description = "",
-  className = "bg-dark text-white p-4",
+  // className = "bg-dark text-white p-4",
+  className = "",
   children,
 }) => {
   return (
     <div>
       <Nav />
       <div className="coantainer-fluid">
-        <div className="jombotron bg-dark text-white text-center">
+        {/* <div className="jombotron bg-dark text-white text-center">
+         */}
+        <div className="jombotron text-center">
           {/* <h2 className="display-4">{title}</h2> */}
           {/* <p className="lead">{description}</p> */}
         </div>
