@@ -60,9 +60,9 @@ const Home = () => {
     donationCity = undefined;
     document.getElementById("donationCategory").selectedIndex = 0;
     document.getElementById("donationState").selectedIndex = 0;
-    document.getElementById("doantionCity").selectedIndex = 0;
-    showDonationFilter();
+    document.getElementById("donationCity").selectedIndex = 0;
     loadAllDonations();
+    donationFilter();
   };
 
   const removeRequestFilter = () => {
@@ -78,8 +78,8 @@ const Home = () => {
     document.getElementById("requestCategory").selectedIndex = 0;
     document.getElementById("requestState").selectedIndex = 0;
     document.getElementById("requestCity").selectedIndex = 0;
-    showRequestFilter();
     loadAllDonations();
+    requestFilter();
   };
 
   const addcitites = (state, type) => {
@@ -175,7 +175,7 @@ const Home = () => {
         <button
           type="submit"
           onClick={
-            type === "doantion" ? removeDonationFilter : removeRequestFilter
+            type === "donation" ? removeDonationFilter : removeRequestFilter
           }
           className="btn btn-danger mt-4"
         >
@@ -208,7 +208,7 @@ const Home = () => {
       requestState,
       requestCity
     ).then((data) => {
-      console.log(data);
+      // console.log(data);
       if (data.error) {
         setError(data.error);
       } else {
@@ -259,7 +259,7 @@ const Home = () => {
 
           <div className="row">
             {donationBags.map((donation, index) => {
-              console.log(donation);
+              // console.log(donation);
               return (
                 <div key={index} className="col-6 mb-2">
                   <Card donation={donation} text="Donation" />

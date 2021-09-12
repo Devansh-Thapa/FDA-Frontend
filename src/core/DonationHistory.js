@@ -17,21 +17,17 @@ const DonationHistory = () => {
   const { user, token } = isAuthenticated();
 
   const showDonationBag = () => {
-    // document.getElementById("donationRequest").style.display = "none";
-    // document.getElementById("donationBag").style.display = "block";
     setShowDonation(true);
   };
 
   const showDonationRequest = () => {
-    // document.getElementById("donationBag").style.display = "none";
-    // document.getElementById("donationRequest").style.display = "block";
     setShowDonation(false);
   };
 
   const loadAllDonations = () => {
-    console.log("loading all donations");
+    // console.log("loading all donations");
     getAllDonationBagsByUserId(user._id, token, "Accepted").then((data) => {
-      console.log("bag", data);
+      // console.log("bag", data);
       if (data.error) {
         setError(data.error);
       } else {
@@ -39,7 +35,7 @@ const DonationHistory = () => {
       }
     });
     getAllDonationRequestsByUserId(user._id, token, "Accepted").then((data) => {
-      console.log("Requests", data);
+      // console.log("Requests", data);
       if (data.error) {
         setError(data.error);
       } else {

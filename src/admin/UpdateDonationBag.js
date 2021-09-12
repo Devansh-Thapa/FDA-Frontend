@@ -37,9 +37,9 @@ const UpdateDonationBag = ({ match }) => {
   } = values;
 
   const preLoad = (donationBagIdId) => {
-    console.log("donationBagId:", donationBagIdId);
+    // console.log("donationBagId:", donationBagIdId);
     getDonationBag(donationBagIdId).then((data) => {
-      console.log(data);
+      // console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
@@ -99,8 +99,8 @@ const UpdateDonationBag = ({ match }) => {
   const onSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
-    updatedonationBag(match.params.donationBagId, user._id, token, values)
-      .then((data) => {
+    updatedonationBag(match.params.donationBagId, user._id, token, values).then(
+      (data) => {
         if (data.error) {
           setValues({ ...values, error: data.error });
         } else {
@@ -118,8 +118,9 @@ const UpdateDonationBag = ({ match }) => {
             getRedirect: true,
           });
         }
-      })
-      .catch((error) => console.log(error));
+      }
+    );
+    // .catch((error) => console.log(error));
   };
 
   const addCities = (state) => {
@@ -127,7 +128,7 @@ const UpdateDonationBag = ({ match }) => {
     var option = document.createElement("option");
     option.text = "Select";
     selector.add(option);
-    console.log("state", state);
+    // console.log("state", state);
     States[state].map((city, index) => {
       var option = document.createElement("option");
       option.text = city;
@@ -265,9 +266,9 @@ const UpdateDonationBag = ({ match }) => {
 
   // console.log("HERE!!");
   return (
-    <Base className="container rounded pt-2 mt-5">
+    <Base className="container form-container rounded pt-2 mt-5">
       <div className="list-inline d-flex justify-content-center">
-        <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3 mt-2">
+        <Link to="/user/dashboard" className="btn btn-md btn-dark mb-3 mt-2">
           Dashboard
         </Link>
         <h1 className="list-inline-item text-white mx-auto pt-1 pr-5">

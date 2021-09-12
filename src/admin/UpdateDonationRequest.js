@@ -39,9 +39,9 @@ const UpdateDonationRequest = ({ match }) => {
   } = values;
 
   const preLoad = (donationRequestIdId) => {
-    console.log("donationRequestId:", donationRequestIdId);
+    // console.log("donationRequestId:", donationRequestIdId);
     getDonationRequest(donationRequestIdId).then((data) => {
-      console.log(data);
+      // console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
@@ -106,27 +106,26 @@ const UpdateDonationRequest = ({ match }) => {
       user._id,
       token,
       values
-    )
-      .then((data) => {
-        if (data.error) {
-          setValues({ ...values, error: data.error });
-        } else {
-          setValues({
-            ...values,
-            name: "",
-            description: "",
-            category: "",
-            contactNumber: "",
-            address: "",
-            city: "",
-            state: "",
-            loading: false,
-            updatedDonationRequest: data.name,
-            getRedirect: true,
-          });
-        }
-      })
-      .catch((error) => console.log(error));
+    ).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error });
+      } else {
+        setValues({
+          ...values,
+          name: "",
+          description: "",
+          category: "",
+          contactNumber: "",
+          address: "",
+          city: "",
+          state: "",
+          loading: false,
+          updatedDonationRequest: data.name,
+          getRedirect: true,
+        });
+      }
+    });
+    // .catch((error) => console.log(error));
   };
 
   const addCities = (state) => {
@@ -271,9 +270,9 @@ const UpdateDonationRequest = ({ match }) => {
 
   // console.log("HERE!!");
   return (
-    <Base className="container rounded pt-2 mt-5">
+    <Base className="container form-container rounded pt-2 mt-5">
       <div className="list-inline d-flex justify-content-center">
-        <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3 mt-2">
+        <Link to="/user/dashboard" className="btn btn-md btn-dark mb-3 mt-2">
           Dashboard
         </Link>
         <h1 className="list-inline-item text-white mx-auto pt-1 pr-5">

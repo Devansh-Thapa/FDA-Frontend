@@ -15,7 +15,7 @@ const Nav = ({ history }) => {
     <div>
       {/* <nav className="navbar sticky-top navbar-expand-sm bg-secondary">
        */}
-      <nav className="navbar sticky-top navbar-expand-sm">
+      <nav className="navbar sticky-top navbar-expand-sm nav-bar">
         <ul className="navbar-nav">
           {isAuthenticated() && (
             <Fragment>
@@ -38,8 +38,11 @@ const Nav = ({ history }) => {
               <li className="nav-item">
                 <Link
                   // style={currentTab(history, "/admin/dashboard")}
-                  className="nav-link"
-                  to="/admin/dashboard"
+                  className={`nav-link ${currentTab(
+                    history,
+                    "/user/dashboard"
+                  )}`}
+                  to="/user/dashboard"
                 >
                   My Dashboard
                 </Link>
@@ -51,7 +54,7 @@ const Nav = ({ history }) => {
               <li className="nav-item">
                 <Link
                   // style={currentTab(history, "/signup")}
-                  className="nav-link"
+                  className={`nav-link ${currentTab(history, "/signup")}`}
                   to="/signup"
                 >
                   Signup
@@ -60,7 +63,7 @@ const Nav = ({ history }) => {
               <li className="nav-item">
                 <Link
                   // style={currentTab(history, "/signin")}
-                  className="nav-link"
+                  className={`nav-link ${currentTab(history, "/signin")}`}
                   to="/signin"
                 >
                   Signin

@@ -7,10 +7,10 @@
   text-decoration: none;
 }
 
-.navigation > ul > li > .nav-link:hover {
+/* .navigation > ul > li > .nav-link:hover {
   color: white;
-}
-.navigation > ul > li > {
+} */
+.navigation > ul > li:hover > .nav-link {
   color: white;
 }
 

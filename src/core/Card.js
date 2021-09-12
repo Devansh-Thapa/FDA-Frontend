@@ -51,7 +51,7 @@ const Card = ({ donation, text, showButton = true }) => {
   };
 
   return (
-    <div className="card">
+    <div className="card mb-4">
       <div className="card-header lead text-center text-white">
         {donation.name}
         <div

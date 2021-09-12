@@ -1,18 +1,18 @@
-nav {
+.nav-bar {
   border-radius: 2px;
   background-color: #4b6587;
   color: white;
 }
-nav ul li a {
+.nav-bar > ul > li > a {
   color: white;
 }
-a.active,
-a:hover {
+.nav-bar > ul > li > a.active,
+.nav-bar > ul > li > a:hover {
   background-color: #415979;
   color: #f9f9f9;
 }
 
-.signout:hover {
+.nav-bar > ul > li > .signout:hover {
   background-color: #415979;
   cursor: pointer;
 }

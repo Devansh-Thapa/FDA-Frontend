@@ -17,22 +17,22 @@ const AdminDashboard = () => {
         </h4>
         <ul className="list-group">
           <li className="list-group-item">
-            <Link to="/admin/create/donationBag" className="nav-link">
+            <Link to="/user/create/donationBag" className="nav-link">
               Add Donation Bag
             </Link>
           </li>
           <li className="list-group-item">
-            <Link to="/admin/manage/donationBags" className="nav-link">
+            <Link to="/user/manage/donationBags" className="nav-link">
               Manage Donation Bags
             </Link>
           </li>
           <li className="list-group-item">
-            <Link to="/admin/create/donationRequest" className="nav-link">
+            <Link to="/user/create/donationRequest" className="nav-link">
               Add Donation Request
             </Link>
           </li>
           <li className="list-group-item">
-            <Link to="/admin/manage/donationRequests" className="nav-link">
+            <Link to="/user/manage/donationRequests" className="nav-link">
               Manage Donation Requests
             </Link>
           </li>

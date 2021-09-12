@@ -30,35 +30,35 @@ const Routes = () => {
         {/* <Route path="/cart" exact component={Cart} /> */}
 
         <Route path="/signin" exact component={AdminRoute} />
-        <PrivateRoute path="/user/dashboard" exact component={UserDashboard} />
-        <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
+        {/* <PrivateRoute path="/user/dashboard" exact component={UserDashboard} /> */}
+        <AdminRoute path="/user/dashboard" exact component={AdminDashboard} />
         <AdminRoute
-          path="/admin/create/DonationBag"
+          path="/user/create/DonationBag"
           exact
           component={AddDonationBag}
         />
         <AdminRoute
-          path="/admin/create/DonationRequest"
+          path="/user/create/DonationRequest"
           exact
           component={AddDonationRequest}
         />
         <AdminRoute
-          path="/admin/manage/donationBags"
+          path="/user/manage/donationBags"
           exact
           component={ManageDonationBags}
         />
         <AdminRoute
-          path="/admin/donationBag/update/:donationBagId"
+          path="/user/donationBag/update/:donationBagId"
           exact
           component={UpdateDonationBag}
         />
         <AdminRoute
-          path="/admin/manage/donationRequests"
+          path="/user/manage/donationRequests"
           exact
           component={ManageDonationRequests}
         />
         <AdminRoute
-          path="/admin/donationRequest/update/:donationRequestId"
+          path="/user/donationRequest/update/:donationRequestId"
           exact
           component={UpdateDonationRequest}
         />

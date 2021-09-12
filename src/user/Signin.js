@@ -36,7 +36,7 @@ const Signin = () => {
           });
         }
       })
-      .catch(console.log("Signin failed!!"));
+      .catch(console.log("Signin failed!!")); 
   };
 
   const performRedirect = () => {

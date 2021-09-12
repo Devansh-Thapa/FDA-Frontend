@@ -19,11 +19,11 @@ const ManageDonationBags = () => {
   const preLoad = () => {
     getAllDonationBagsByUserId(user._id, token, "Available").then((data) => {
       if (data.error) {
-        console.log("ERROR!!:");
-        console.log(data.error);
+        // console.log("ERROR!!:");
+        // console.log(data.error);
       } else {
         setDonationBags(data);
-        console.log(data);
+        // console.log(data);
       }
     });
   };
@@ -48,7 +48,7 @@ const ManageDonationBags = () => {
   const deleteThisProduct = (donationBagId) => {
     deleteDonationBag(donationBagId, user._id, token).then((data) => {
       if (data.error) {
-        console.log("ERROR!!:");
+        // console.log("ERROR!!:");
         // console.log(data.error);
       } else {
         // setProducts(data);
@@ -58,11 +58,11 @@ const ManageDonationBags = () => {
   };
 
   return (
-    <Base className="container rounded pt-2 mt-5">
+    <Base className="container list-container rounded pt-2 mt-5">
       <div className="list-inline d-flex justify-content-center">
         <Link
           className="btn btn-md btn-dark mb-3 mt-2 list-inline-item"
-          to={`/admin/dashboard`}
+          to={`/user/dashboard`}
         >
           Dashboard
         </Link>

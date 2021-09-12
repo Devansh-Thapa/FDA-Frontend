@@ -47,7 +47,7 @@ const AddDonationRequest = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
-    console.log(values);
+    // console.log(values);
     createDonationRequest(user._id, token, values)
       .then((data) => {
         if (data.error) {
@@ -210,10 +210,10 @@ const AddDonationRequest = () => {
   );
 
   return (
-    <Base className="container rounded pt-2 mt-5">
+    <Base className="container form-container rounded pt-2 mt-5">
       <div className="list-inline d-flex justify-content-center">
         <Link
-          to="/admin/dashboard"
+          to="/user/dashboard"
           className="btn btn-md btn-dark mb-3 mt-2 list-inline-item"
         >
           Dashboard
