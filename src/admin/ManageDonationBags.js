@@ -35,7 +35,7 @@ const ManageDonationBags = () => {
   const performRedirect = () => {
     if (isAuthenticated()) {
       if (getRedirect === "YES") {
-        return <Redirect to={`/admin/donationBag/update/${donationBagId}`} />;
+        return <Redirect to={`/user/donationBag/update/${donationBagId}`} />;
       }
     }
   };

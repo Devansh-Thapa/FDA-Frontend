@@ -171,7 +171,7 @@ const UpdateDonationRequest = ({ match }) => {
   const performRedirect = () => {
     if (isAuthenticated()) {
       if (getRedirect) {
-        return <Redirect to="/admin/manage/donationRequests" />;
+        return <Redirect to="/user/manage/donationRequests" />;
       }
     } else {
       return <Redirect to="/signin" />;

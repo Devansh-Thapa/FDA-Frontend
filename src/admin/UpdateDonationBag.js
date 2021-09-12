@@ -167,7 +167,7 @@ const UpdateDonationBag = ({ match }) => {
   const performRedirect = () => {
     if (isAuthenticated()) {
       if (getRedirect) {
-        return <Redirect to="/admin/manage/donationBags" />;
+        return <Redirect to="/user/manage/donationBags" />;
       }
     } else {
       return <Redirect to="/signin" />;

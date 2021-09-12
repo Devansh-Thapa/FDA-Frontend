@@ -38,7 +38,7 @@ const ManageDonationRequests = () => {
     if (isAuthenticated()) {
       if (getRedirect === "YES") {
         return (
-          <Redirect to={`/admin/donationRequest/update/${donationRequestId}`} />
+          <Redirect to={`/user/donationRequest/update/${donationRequestId}`} />
         );
       }
     }

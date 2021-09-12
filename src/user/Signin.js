@@ -36,7 +36,7 @@ const Signin = () => {
           });
         }
       })
-      .catch(console.log("Signin failed!!")); 
+      .catch(console.log("Signin failed!!"));
   };
 
   const performRedirect = () => {
@@ -90,6 +90,7 @@ const Signin = () => {
                 onChange={handleChange("email")}
                 className="form-control"
                 type="text"
+                required
               />
             </div>
             <div className="form-group">
@@ -101,6 +102,7 @@ const Signin = () => {
                 onChange={handleChange("password")}
                 className="form-control"
                 type="password"
+                required
               />
             </div>
             <button onClick={onSubmit} className="btn btn-success btn-block">

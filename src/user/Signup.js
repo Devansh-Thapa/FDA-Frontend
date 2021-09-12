@@ -56,6 +56,7 @@ const Signup = () => {
                 onChange={handleChange("name")}
                 type="text"
                 value={name}
+                required
               />
             </div>
             <div className="form-group">
@@ -67,6 +68,7 @@ const Signup = () => {
                 onChange={handleChange("email")}
                 type="text"
                 value={email}
+                required
               />
             </div>
             <div className="form-group">
@@ -78,6 +80,7 @@ const Signup = () => {
                 onChange={handleChange("password")}
                 type="password"
                 value={password}
+                required
               />
             </div>
             <div className="form-group">
